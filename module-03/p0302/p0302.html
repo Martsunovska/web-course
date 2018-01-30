@@ -5,9 +5,19 @@
     <title>Table Demo</title>
     <style>
         table,
+        td,
+        tr,
+        th {
+            padding: 5px;
+            text-align: center;
+            border-collapse: collapse;
+            border: 2px solid gray;
+        }
+        
         th,
-        td {
-            border: 1px solid black
+        tfoot {
+            text-align: center;
+            background-color: blanchedalmond
         }
     </style>
 </head>
@@ -15,7 +25,7 @@
 <body>
     <div class="conteiner">
         <table>
-            <caption>My Reading List</caption>
+            <caption style="color:brown">My Reading List</caption>
             <thead>
                 <tr>
                     <th>Autor(s)</th>
