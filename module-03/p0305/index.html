@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
+    <form action="https://httpbin.org/post" method="post">
+        <fieldset>
+            <legend>Application Form</legend>
+            Full name: <input name="fullname" type="text" placeholder="Enter your full name" required /> Email Address: <input name="emailAddress" type="email" placeholder="Enter your Email Address" required /> Website: <input name="website" type="url"
+                placeholder="Enter your Website url" required />
+        </fieldset>
+        <input type="submit" value="Enroll" />
+    </form>
 </body>
 
 </html>
