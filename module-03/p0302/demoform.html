@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #btn {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="https://httpbin.org/post" method="post">
+        <fieldset>
+            <legend>General info</legend>
+            <label for="username">Your name</label>
+            <input id="username" name="username" type="text" placeholder="Ex: Alex Petroff" required>
+            <label for="useraddress">Your address</label>
+            <input id="useraddress" name="useraddress" type="text" placeholder="Ex: Ohienko, 82" required>
+        </fieldset>
+        <fieldset>
+            <legend>Pizza info</legend>
+            <select id="pizzaname" name="pizzaname">
+                <option value="pepperoni">pepperoni</option>
+                <option value="cheese" selected>cheese</option>
+                <option value="mexicano">mexicano</option>
+            </select>
+            <input id="extracheese" type="checkbox" value="cheese" name="extracheese"> Cheese+
+            <input id="extratomato" type="checkbox" value="tomato" name="extratomato"> Tomato
+        </fieldset>
+        <fieldset>
+            <input type="radio" name="pizzasize" value="s" checked> Small
+            <input type="radio" name="pizzasize" value="m"> Medium
+            <input type="radio" name="pizzasize" value="l"> Large
+        </fieldset>
+        <div id="btn">
+            <input type="submit" value="Get My Pizza!">
+        </div>
+    </form>
+</body>
+
+</html>
