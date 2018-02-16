@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body onload="currency();">
+    <canvas id="diagram" width="800" height="300"> 
+        </canvas>
+
+
+    <script type="text/javascript">
+        function currency() {
+            var canvas = document.getElementById("diagram");
+            var ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(30, 20);
+            ctx.lineTo(30, 280);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(20, 270);
+            ctx.lineTo(780, 270);
+            ctx.stroke();
+            ctx.fillStyle = "rgb(100,0,0)";
+            ctx.fillRect(30, 60, 50, 210);
+        }
+    </script>
+</body>
+
+</html>
