@@ -11,7 +11,7 @@
 </head>
 
 <body onload="currency();">
-    <canvas id="diagram" width="800" height="300"> 
+    <canvas id="diagram" width="600" height="350"> 
         </canvas>
 
 
@@ -20,15 +20,39 @@
             var canvas = document.getElementById("diagram");
             var ctx = canvas.getContext("2d");
             ctx.beginPath();
-            ctx.moveTo(30, 20);
-            ctx.lineTo(30, 280);
+            ctx.moveTo(50, 20);
+            ctx.lineTo(50, 280);
             ctx.stroke();
             ctx.beginPath();
-            ctx.moveTo(20, 270);
-            ctx.lineTo(780, 270);
+            ctx.moveTo(40, 270);
+            ctx.lineTo(580, 270);
             ctx.stroke();
-            ctx.fillStyle = "rgb(100,0,0)";
-            ctx.fillRect(30, 60, 50, 210);
+
+            ctx.strokeStyle = "maroon";
+            ctx.fillStyle = "maroon";
+            ctx.font = 'bold 20px sans-serif';
+            ctx.strokeText("26.84", 51, 50);
+            ctx.strokeText("26.69", 151, 100);
+            ctx.strokeText("26.65", 251, 110);
+            ctx.strokeText("26.75", 351, 80);
+            ctx.strokeText("26.75", 451, 80);
+            ctx.font = "italic 17px Arial";
+            ctx.fillText("ДАТА", 300, 330);
+
+            ctx.fillText("14.02.2018", 30, 290);
+            ctx.fillText("15.02.2018", 130, 290);
+            ctx.fillText("16.02.2018", 230, 290);
+            ctx.fillText("17.02.2018", 330, 290);
+            ctx.fillText("18.02.2018", 430, 290);
+            ctx.fillStyle = "rgb(188,143,143)";
+            ctx.fillRect(51, 59, 50, 210);
+            ctx.fillRect(150, 109, 50, 160);
+            ctx.fillRect(250, 119, 50, 150);
+            ctx.fillRect(350, 89, 50, 180);
+            ctx.fillRect(450, 89, 50, 180);
+            ctx.fillStyle = "maroon";
+            ctx.rotate(60 * Math.PI / 180);
+            ctx.fillText("КУРС ДОЛАРА", 200, 100);
         }
     </script>
 </body>
