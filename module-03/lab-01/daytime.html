@@ -28,15 +28,19 @@
                 '$scope', 'timeConfig',
                 function($scope, timeConfig) {
                     t = timeConfig.time.getHours();
-                    if (12 <= t && t <= 18) {
-                        $scope.appTime = timeConfig.timeDay
-                    } else if (18 <= t && t <= 24) {
-                        $scope.appTime = timeConfig.timeEvening
-                    } else if (6 <= t && t <= 12) {
-                        $scope.appTime = timeConfig.timeMorning
-                    } else if (0 <= t && t <= 6) {
+                    (18 <= t && t <= 24) ? $scope.appTime = timeConfig.timeEvening:
+                        (12 <= t && t <= 18) ? $scope.appTime = timeConfig.timeDay :
+                        (6 <= t && t <= 12) ? $scope.appTime = timeConfig.timeMorning :
                         $scope.appTime = timeConfig.timeNight
-                    }
+                        /* if (12 <= t && t <= 18) {
+                            $scope.appTime = timeConfig.timeDay
+                        } else if (18 <= t && t <= 24) {
+                            $scope.appTime = timeConfig.timeEvening
+                        } else if (6 <= t && t <= 12) {
+                            $scope.appTime = timeConfig.timeMorning
+                        } else if (0 <= t && t <= 6) {
+                            $scope.appTime = timeConfig.timeNight
+                        } */
                 }
             ]);
     </script>
