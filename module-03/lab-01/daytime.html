@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="daytime">
+
+<head>
+    <title>Angular Fundamentals</title>
+    <link rel="stylesheet" ref="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body ng-controller="timeController">
+    <div class="container">
+        <h1>The day's time is: {{appTime}}</h1>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+    <script>
+        var daytime = angular.module('daytime', [])
+            .constant('timeConfig', {
+                time: new Date(),
+                timeMorning: 'Morning',
+                timeDay: 'Day',
+                timeEvening: 'Evening',
+                timeNight: 'Night'
+            })
+            .controller('timeController', [
+                '$scope', 'timeConfig',
+                function($scope, timeConfig) {
+                    t = timeConfig.time.getHours();
+                    if (12 <= t && t <= 18) {
+                        $scope.appTime = timeConfig.timeDay
+                    } else if (18 <= t && t <= 24) {
+                        $scope.appTime = timeConfig.timeEvening
+                    } else if (6 <= t && t <= 12) {
+                        $scope.appTime = timeConfig.timeMorning
+                    } else if (0 <= t && t <= 6) {
+                        $scope.appTime = timeConfig.timeNight
+                    }
+                }
+            ]);
+    </script>
+</body>
+
+</html>
