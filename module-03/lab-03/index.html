@@ -13,14 +13,14 @@
         <h3>Topping Search</h3>
         <input type="text" class="form-control" ng-model="model.search">
 
-        <!-- 
-        <div class="alert alert-success" role="alert" ng-hide="isClose">Topping added!
-            <button type="button" class="btn btn-default" ng-model="isClose">close</button>
-        </div> -->
 
-        <!--  <div class="alert alert-danger" role="alert" ng-show="noRes">
+        <div class="alert alert-success" role="alert" ng-hide="model.isCloseAlert">Topping added!
+            <button type="button" class="btn btn-default" ng-click="closeAlert()">close</button>
+        </div>
+
+        <div class="alert alert-danger" role="alert" ng-show="!model.search && noResalt()">
             No results
-        </div> -->
+        </div>
 
         <div ng-hide="model.search">
             Enter the search criteria above.

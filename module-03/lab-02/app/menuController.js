@@ -9,7 +9,7 @@ app.controller('menuController', [
             }
         };
 
-        $scope.$watch('model.mainDish.name', function(newValue, oldValue) {
+        $scope.$watch('model.mainDish', function(newValue, oldValue) {
             if (newValue === 'Combo Pizza') {
                 $scope.model = { title: 'Super Menu' };
             }
