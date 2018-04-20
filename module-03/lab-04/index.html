@@ -3,7 +3,7 @@
 
 <!-- вивести список країн аналогічно з репозторіями в Екотурі
 apiV1 -> countryController
-
+в адміні поміняти кантріси на основі лаб4
 -->
 
 <head>
@@ -17,6 +17,8 @@ apiV1 -> countryController
         <input type="number" ng-model="model.number" class="form-control" />
         <input type="button" class="btn btn-primary" value="Check Odd Number" ng-click="checkOddNumber(model.number)" />
         <pre>{{model.result}}</pre>
+
+        <input type="text" ng-model="model.fil" class="form-control" />
 
         <input type="button" class="btn btn-primary" value="Load Repos" ng-click="getRepos()" ng-hide="model.repos" />
 
@@ -65,6 +67,10 @@ apiV1 -> countryController
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-resource.min.js"></script>
+    <script src="./app/gitHubService.js"></script>
+
     <script src="./app/app.js"></script>
     <script src="./app/labController.js"></script>
 </body>
