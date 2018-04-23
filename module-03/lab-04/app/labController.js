@@ -1,7 +1,7 @@
 app.controller("labController", [
-    "$scope", "$timeout", "$q", "$http", "gitHub",
+    "$scope", "$timeout", "$q", "$http", "gitHub", /* "$promise", */
 
-    function($scope, $timeout, $q, $http, gitHub) {
+    function($scope, $timeout, $q, $http, gitHub, /* promise */ ) {
         $scope.model = {
             number: 0,
             result: "Ready",
@@ -38,13 +38,17 @@ app.controller("labController", [
         }
 
         function getRepos(fil) {
-            $scope.model.repos = gitHub.getAll({ org: fil });
+            $scope.model.detail = null;
+            gitHub.getAll({ org: fil })
+                .$promise
+                .then(res => $scope.model.repose = res)
+                .catch(err => console.log(err));
         }
 
 
-        function loadDetail(name) {
+        function loadDetail(fil, name) {
             $scope.model.detail = null;
-            $scope.model.detail = gitHub.getDetail({ id: name });
+            $scope.model.detail = gitHub.getDetail({ org: fil, id: name });
         }
 
     }

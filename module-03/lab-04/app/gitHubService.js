@@ -14,7 +14,7 @@ factory("gitHub", [
             },
             getDetail: {
                 method: "GET",
-                params: { action: "repos" }
+                params: { action: "repos", org: "" }
             },
         });
     }
