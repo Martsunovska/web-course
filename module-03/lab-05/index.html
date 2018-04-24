@@ -9,7 +9,7 @@
 <body ng-controller="labController">
     <div class="container">
         <h1>New User Registration</h1>
-        <form class="form-horizontal" name="form" novalidate>
+        <form class="form-horizontal" name="form" ng-hide="formhide" novalidate>
             <div class="form-group">
                 <div class="col-md-2">
                     <label>Username</label>
@@ -79,7 +79,7 @@
                         <option value="Combo Pizza">Combo Pizza</option>
                     </select>
                 </div>
-                <div class="alert alert-danger" ng-show="(form.emailAddress.$touched || form.$submitted) && form.emailAddress.$error.required">
+                <div class="alert alert-danger" ng-show="(form.favorite.$touched || form.$submitted) && form.favorite.$error.required">
                     Favorite Pizza is required
                 </div>
             </div>
@@ -94,6 +94,8 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-resource.min.js"></script>
+        <script src="./scripts/registrationService.js"></script>
         <script src="./scripts/app.js"></script>
         <script src="./scripts/labController.js"></script>
 </body>
